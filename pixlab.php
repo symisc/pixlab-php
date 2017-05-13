@@ -7,10 +7,10 @@
  class Pixlab {
 	private $key = null;   /* The PixLab Key */
 	public $status = 200;  /* HTTP status code */
-	public $json = null;   /* JSON response from the Pixlab API */
-	public $raw_json = null; /* Raw JSON */
-	public $blob =  null;  /* Raw (Binary image content) response from the Pixlab API */
-	public $mime = '';     /* PixLab API Server MIME response */
+	public $json = null;   /* Decoded JSON response from the Pixlab API server */
+	public $raw_json = null; /* Raw JSON response */
+	public $blob =  null;  /* Raw (Binary image content) response from the Pixlab API server */
+	public $mime = '';     /* PixLab API Server MIME type response */
 	public $error = '';    /* Error message if $status != 200 */
 	
 	public function __construct($key) {
@@ -73,7 +73,7 @@
 		/* All done */
 		return true;
 	}
-	public function post($cmd,$param = [],$json_form = true) {
+	public function post($cmd,$param = [],$file_upload = false) {
 		if(!$this->key || strlen($this->key) < 15 ){
 			$this->status = 401; /* Unauthorized */
 			$this->error = 'Missing/Invalid PixLab API Key';
@@ -84,12 +84,21 @@
 		curl_setopt($curl, CURLOPT_POST, true);
 		/* Build the query first */
 		$param['key'] = $this->key;
-		if( $json_form ){
+		if( !$file_upload ){
+			/* Default to JSON form */
 			$request = json_encode($param);
 			curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 		}else{
-			/* Standard form data */
-			$request = http_build_query($param);
+			$file_upload = realpath($file_upload);
+			if(!is_readable($file_upload) ){
+				$this->status = 404; /* Not found  */
+				$this->error = "Target file '$file_upload' not found or is unreadable";
+				return false;
+			}
+			 $cFile = curl_file_create($file_upload);
+			/* Standard multi-part/form-data upload */
+			$param['file'] = $cFile;
+			$request = $param;
 		}
 		/* Make the request now */
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $request); 
@@ -121,3 +130,4 @@
 		return true;
 	}
  }
+?>
