@@ -12,6 +12,7 @@
 	public $blob =  null;  /* Raw (Binary image content) response from the Pixlab API server */
 	public $mime = '';     /* PixLab API Server MIME type response */
 	public $error = '';    /* Error message if $status != 200 */
+	public $scheme = 'https://'; /* Default to HTTPS but if you are calling from a trusted network consider using clear http:// for performance reason */
 	
 	public function __construct($key) {
 		$this->key = $key;
@@ -21,6 +22,9 @@
 	}
 	public function get_blob(){
 		return $this->blob;
+	}
+	public function switch_to_http(){
+		$this->scheme = 'http://';
 	}
 	public function get_decoded_json(){
 		return $this->json;
@@ -43,7 +47,7 @@
 		$cmd = basename(trim($cmd," \t/"));
 		/* Build the query first */
 		$param['key'] = $this->key;
-		$request = "https://api.pixlab.io/$cmd?".http_build_query($param);
+		$request = $this->scheme."api.pixlab.io/$cmd?".http_build_query($param);
 		/* Make the request now */
 		$curl = curl_init($request);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -80,7 +84,7 @@
 			return false;
 		}
 		$cmd = basename(trim($cmd," \t/"));
-		$curl = curl_init("https://api.pixlab.io/$cmd?");
+		$curl = curl_init($this->scheme."api.pixlab.io/$cmd?");
 		curl_setopt($curl, CURLOPT_POST, true);
 		/* Build the query first */
 		$param['key'] = $this->key;
