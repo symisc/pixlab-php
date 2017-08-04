@@ -1,8 +1,9 @@
 # pixlab-php
 This is the official PixLab PHP Client for the [PixLab](https://pixlab.io) Machine Vision API. The client is a single PHP class which let you interact with the API server using the GET and POST HTTP methods.
+
 For the full list of samples using this class, please refer to: https://github.com/symisc/pixlab/tree/master/PHP
 
-# First Example: Blur all human faces:
+## First Example: Blur all human faces:
 ```php
 require_once "pixlab.php";
 /* Censure all human faces present in a given image by invoking 'facedetect' first which return the rectangle coordinates 
@@ -37,7 +38,7 @@ if( count($faces) < 1 ){
 	}
 }
 ```
-# Second Example: Mimic Snapchat Filters
+## Second Example: Mimic Snapchat Filters
 ```php
 /*
  * PixLab PHP Client which is just a single class PHP file without any dependency that you can get from Github
@@ -141,7 +142,7 @@ if( !$pix->post('merge',[
 }
 echo "\n";
 ```
-#Useful Links
+## Useful Links
 * [The PixLab API in 5 minutes or less](https://pixlab.io/start).
 * [List of API endpoints](https://pixlab.io/api).
 * [The PixLab API Reference Guide](https://pixlab.io/api).
