@@ -145,5 +145,5 @@ echo "\n";
 ## Useful Links
 * [The PixLab API in 5 minutes or less](https://pixlab.io/start).
 * [List of API endpoints](https://pixlab.io/api).
-* [The PixLab API Reference Guide](https://pixlab.io/api).
+* [The PixLab API Reference Guide](https://pixlab.io/cmdls).
 * [The PixLab Sample Set](https://pixlab.io/examples).
