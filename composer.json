@@ -1,0 +1,16 @@
+{
+    "name": "symisc/pixlab-php",
+    "type": "library",
+    "homepage": "https://github.com/symisc/pixlab-php",
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "PixLab | Symisc Systems",
+            "email": "support@pixlab.io",
+            "homepage": "https://pixlab.io/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    }
+}
