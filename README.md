@@ -6,11 +6,13 @@ For the full list of samples using this class, please refer to: https://github.c
 ## First Example: Blur all human faces:
 ```php
 require_once "pixlab.php";
-/* Censure all human faces present in a given image by invoking 'facedetect' first which return the rectangle coordinates 
- * of all human faces present and then invoke 'mogrify' to censure those faces.
- */ 
 
-# Target Image: Feel free to change to whatever image you want
+/*
+ * Detect all human faces in a given image or video frame via `facedetect` and blur all of them via `mogrify`.
+ * https://pixlab.io/#/cmd?id=facedetect & https://pixlab.io/#/cmd?id=mogrify for additional information.
+ */
+ 
+# Target Image: Feel free to change to whatever image holding faces you want
 $img = 'http://cf.broadsheet.ie/wp-content/uploads/2015/03/jeremy-clarkson_3090507b.jpg';
 
 $key = 'My_Pix_Key';
