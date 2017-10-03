@@ -185,12 +185,16 @@ if( $score < 0.5 ){
  * https://github.com/symisc/pixlab-php 
  */
 require_once "pixlab.php";
+
 # Given an image with human readable characters. Detect input language & extract text content from there.
 # https://pixlab.io/#/cmd?id=ocr for additional information.
+
 /* Target image with human readable text input */
 $img = 'http://quotesten.com/wp-content/uploads/2016/06/Confucius-Quote.jpg';
+
 # Your PixLab key
 $key = 'My_PixLab_Key';
+
 /* Process */
 $pix = new Pixlab($key);
 if( !$pix->get('ocr',array('img' => $img)) ){
