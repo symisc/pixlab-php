@@ -2,7 +2,7 @@
     "name": "symisc/pixlab-php",
     "type": "library",
     "homepage": "https://github.com/symisc/pixlab-php",
-    "license": "BSD",
+    "license": "BSD-2-Clause",
     "description": "Official PHP client for the PixLab Machine Vision APIs (https://pixlab.io/start)",
     "authors": [
         {
