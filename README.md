@@ -1,4 +1,6 @@
-# pixlab-php
+# PixLab Machine Vision APIs - Official PHP Client 
+[![GitHub package version](https://img.shields.io/badge/Packagist-Ready-green.svg)](https://packagist.org/packages/symisc/pixlab-php)
+
 This is the official PixLab PHP Client for the [PixLab](https://pixlab.io) Machine Vision API. The client is a single PHP class which let you interact with the API server using the GET and POST HTTP methods.
 
 For the full list of samples using this class, please refer to: https://github.com/symisc/pixlab/tree/master/PHP
