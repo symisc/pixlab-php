@@ -1,7 +1,7 @@
 <?php
 /* 
- * PixLab Official PHP client - https://pixlab.io. 
- * Copyright (C) 2017 - 2018 Symisc Systems, SUARL http://symisc.net.
+ * Official PHP client for the PixLab Machine Vision APIs - https://pixlab.io. 
+ * Copyright (C) 2017 - 2020 PixLab | Symisc Systems, SUARL https://pixlab.io.
  * License: BSD-2 Clause
  */
  class Pixlab {
