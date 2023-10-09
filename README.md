@@ -3,7 +3,12 @@
 
 This is the official PixLab PHP Client for the [PixLab](https://pixlab.io) Machine Vision API. The client is a single PHP class which let you interact with the API server using the GET and POST HTTP methods.
 
-For the full list of samples using this class, please refer to: https://github.com/symisc/pixlab/tree/master/PHP
+For the full list of samples using this class, please refer to: 
+* [PHP Code Samples](https://github.com/symisc/pixlab/tree/master/PHP)
+* [PixLab Examples Page](https://pixlab.io/examples)
+* [Implement a Minimalistic KYC Form & Identify Verification Check ](https://dev.to/unqlite_db/implement-a-minimalistic-kyc-form-identify-verification-check-36f5)
+* [Step-by-step guide to do e-KYC in your app](https://itnext.io/step-by-step-guide-to-do-e-kyc-in-your-app-c3b4e240617)
+* [Scanning Malaysian, UAE, India & Others ID Cards with PixLab API](https://levelup.gitconnected.com/scanning-malaysian-id-cards-with-pixlab-api-33dd527a9408)
 ## Example: Scan Passports, Visas or ID cards from various countries:
 ```php
 require_once "pixlab.php";
